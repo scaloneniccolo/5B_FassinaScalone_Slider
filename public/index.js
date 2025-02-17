@@ -1,5 +1,5 @@
 import { caro } from '../carosello.js';
-import { login } from '../login.js';
+import { clog } from '../login.js';
 import { table } from '../tabella.js';
 
 const homeBtn = document.getElementById("home-btn-ad");
@@ -8,7 +8,7 @@ homeBtn.onclick = () => {
     document.getElementById("admin").style.display = 'none';
     document.getElementById("home").style.display = 'block';
 }
-login();
+clog();
 
 
 (async () => {
