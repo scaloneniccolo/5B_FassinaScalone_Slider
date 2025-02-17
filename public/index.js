@@ -1,6 +1,6 @@
 import { caro } from '../carosello.js';
 import { login } from '../login.js';
-import { tab } from '../table.js';
+import { table } from '../tabella.js';
 
 const homeBtn = document.getElementById("home-btn-ad");
 const tableAd = document.getElementById("ad-table");
@@ -16,7 +16,7 @@ login();
     const button = document.querySelector("#button");
     const link = document.querySelector("#link");
 
-    const cerca_immagini = async () => {
+    const find = async () => {
         try {
             const res = await fetch("http://localhost:5600/images");
             if (!res.ok) throw new Error(`Errore HTTP: ${res.status}`);
@@ -24,17 +24,17 @@ login();
             console.log(data);
             if (data == []){
                 console.log("trunc")
-                trunc();
+                truncate();
             }
             
             caro(data); 
-            tab(tableAd, data, delete_immagini);
+            table(tableAd, data, delete_i);
         } catch (e) {
             console.log(e);
         }
     }
     
-    const trunc = async () => {
+    const truncate = async () => {
         try {
             const res = await fetch("http://localhost:5600/truncate", {
                 method: "DELETE" 
@@ -43,13 +43,13 @@ login();
             const data = await res.json();
             console.log(data);
             caro(data);
-            tab(tableAd, data, delete_immagini);
+            table(tableAd, data, delete_i);
         } catch (e) {
             console.log(e);
         }
     }
 
-    const delete_immagini = async (id) => {
+    const delete_i = async (id) => {
         try {
             const res = await fetch(`http://localhost:5600/delete/${id}`, {
                 method: "DELETE" 
@@ -60,13 +60,13 @@ login();
             const data = await res1.json();
             console.log(data);
             caro(data); 
-            tab(tableAd, data, delete_immagini);
+            table(tableAd, data, delete_i);
         } catch (e) {
             console.log(e);
         }
     }
 
-    const handleSubmit = async (event) => {
+    const sub = async (event) => {
         event.preventDefault();
         const formData = new FormData();
         formData.append("file", inputFile.files[0]);
@@ -87,6 +87,6 @@ login();
             console.log(e);
         }
     }
-    cerca_immagini();
-    button.onclick = handleSubmit;
+    find();
+    button.onclick = sub;
 })();
