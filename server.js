@@ -3,8 +3,6 @@ const http = require('http');
 const path = require('path');
 const app = express();
 const multer  = require('multer');
-const cors = require("cors");
-app.use(cors());
 const database = require("./database")
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
