@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SLIDER</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="home" class="container">
+        <header class="banner">
+            <h1 class="banner-title">IMMAGINIi</h1>
+            <button id="adminBtn" class="admin-btn" data-bs-toggle="modal" data-bs-target="#loginModal">ADMIN</button>
+        </header>
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div id="carousel" class="carousel-inner">
+                <div class="carousel-item">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">P</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">S</span>
+            </button>
+        </div>
+    </div>
+    <div class="modal" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">LOGIN UTENTE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="user" class="form-label">USERNAME</label>
+                            <input id="user" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="psw" class="form-label">PASSWORD</label>
+                            <input id="psw" type="password" class="form-control" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="loginBtn" class="btn btn-primary" type="button">LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="admin" class="hidden">
+        <header class="admin-header">
+            <div id="user-ad" class="username-ad">Utente</div>
+            <a href="#home" id="home-btn-ad" class="home-button">H</a>
+        </header>
+        <div class="admin-container">
+            <h2>GESTISCIi</h2>
+            <form id ="upload">
+                <input id="file" name="file" type="file" single>
+                <button id="button" type="submit" class="btn btn-success">UPLOAD</button>
+            </form>
+            <div id="ad-table"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
