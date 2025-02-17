@@ -1,10 +1,11 @@
-import { caro } from './components/carosello.js';
-import { clog } from './components/login.js';
-import { table } from './components/tabella.js';
-import { createMiddleware } from "./middleware.js";
-const middleware = createMiddleware();
+import { caro } from 'public/components/carosello.js';
+import { clog } from 'public/components/login.js';
+import { table } from 'public/components/tabella.js';
 
-const navigator = createNavigator(document.querySelector("#container"));
+//import { createMiddleware } from 'public/components/middleware.js';
+//const middleware = createMiddleware();
+//const navigator = createNavigator(document.querySelector("#container"));
+
 const homeBtn = document.getElementById("home-btn-ad");
 const tableAd = document.getElementById("ad-table");
 homeBtn.onclick = () => {
@@ -21,7 +22,7 @@ clog();
 
     const find = async () => {
         try {
-            const res = await fetch("http://localhost:5600/im");
+            const res = await fetch("http://localhost:5600/images");
             if (!res.ok) throw new Error(`Errore HTTP: ${res.status}`);
             const data = await res.json();
             console.log(data);
