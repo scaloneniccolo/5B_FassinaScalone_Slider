@@ -13,7 +13,7 @@ fetch('../conf.json')
         console.log(myToken)
     })
     .catch(error => console.error('Errore:', error));
-export const createLogin = () => {
+export const login = () => {
     const inputName = document.querySelector("#user");
     const inputPassword = document.querySelector("#psw");
     const loginButton = document.getElementById("loginBtn");
