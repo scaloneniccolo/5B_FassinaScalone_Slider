@@ -1,6 +1,6 @@
-import { caro } from 'public/components/carosello.js';
-import { clog } from 'public/components/login.js';
-import { table } from 'public/components/tabella.js';
+import { caro } from './components/carosello.js';
+import { clog } from './components/login.js';
+import { table } from './components/tabella.js';
 
 //import { createMiddleware } from 'public/components/middleware.js';
 //const middleware = createMiddleware();
